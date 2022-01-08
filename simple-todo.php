@@ -9,7 +9,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Simple Todo
- * Plugin URI:        
+ * Plugin URI:        https://github.com/syedgalib/simple-todo
  * Description:       A simple todo plugin
  * Version:           1.0.0
  * Requires at least: 5.2
@@ -19,7 +19,7 @@
  * Text Domain:       simple-todo
  * License:           GPL v2 or later
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Update URI:        
+ * Update URI:        https://github.com/syedgalib/simple-todo
  */
 
 require dirname( __FILE__ ) . '/vendor/autoload.php';

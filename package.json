@@ -1,0 +1,23 @@
+{
+  "name": "simple-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syedgalib/simple-todo.git"
+  },
+  "keywords": [],
+  "author": "syedgalib",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syedgalib/simple-todo/issues"
+  },
+  "homepage": "https://github.com/syedgalib/simple-todo#readme",
+  "devDependencies": {
+    "wp-pot": "^1.9.9"
+  }
+}

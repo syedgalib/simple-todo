@@ -3,3 +3,4 @@ __*/
 .DS_Store
 /.vscode
 /.idea
+*.map

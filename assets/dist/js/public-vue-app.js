@@ -81,36 +81,21 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./assets/src/js/public/main.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./assets/src/js/public/vue-app.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./assets/src/js/public/main.js":
-/*!**************************************!*\
-  !*** ./assets/src/js/public/main.js ***!
-  \**************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _scss_public_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../scss/public-style.scss */ "./assets/src/scss/public-style.scss");
-/* harmony import */ var _scss_public_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_public_style_scss__WEBPACK_IMPORTED_MODULE_0__);
-
-
-/***/ }),
-
-/***/ "./assets/src/scss/public-style.scss":
-/*!*******************************************!*\
-  !*** ./assets/src/scss/public-style.scss ***!
-  \*******************************************/
+/***/ "./assets/src/js/public/vue-app.js":
+/*!*****************************************!*\
+  !*** ./assets/src/js/public/vue-app.js ***!
+  \*****************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-// extracted by mini-css-extract-plugin
+console.log('Vue App');
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=public-main.js.map
+//# sourceMappingURL=public-vue-app.js.map

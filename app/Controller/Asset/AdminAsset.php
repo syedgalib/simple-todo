@@ -31,16 +31,16 @@ class AdminAsset extends AssetEnqueuer {
 	public function add_css_scripts() {
 		$scripts = [];
 
-		// $scripts['simple-todo-admin-style'] = [
-		// 	'file_name' => 'admin-style',
+		// $scripts['simple-todo-admin-main-style'] = [
+		// 	'file_name' => 'admin-main',
 		// 	'base_path' => SIMPLE_TODO_CSS_PATH,
 		// 	'deps'      => [],
 		// 	'ver'       => $this->script_version,
 		// 	'group'     => 'admin',
 		// ];
 
-		$scripts['simple-todo-admin-style'] = [
-			'file_name' => 'admin-style',
+		$scripts['simple-todo-admin-main-style'] = [
+			'file_name' => 'admin-main',
 			'base_path' => SIMPLE_TODO_CSS_PATH,
 			'deps'      => [],
 			'ver'       => $this->script_version,
@@ -59,16 +59,16 @@ class AdminAsset extends AssetEnqueuer {
 	public function add_js_scripts() {
 		$scripts = [];
 
-		// $scripts['simple-todo-admin-script'] = [
-		// 	'file_name'     => 'admin-script',
+		// $scripts['simple-todo-admin-main-script'] = [
+		// 	'file_name'     => 'admin-main',
 		// 	'base_path'     => SIMPLE_TODO_JS_PATH,
 		// 	'deps'          => '',
 		// 	'ver'           => $this->script_version,
 		// 	'group'         => 'admin',
 		// ];
 
-		$scripts['simple-todo-admin-script'] = [
-			'file_name'     => 'admin-script',
+		$scripts['simple-todo-admin-main-script'] = [
+			'file_name'     => 'admin-main',
 			'base_path'     => SIMPLE_TODO_JS_PATH,
 			'deps'          => '',
 			'ver'           => $this->script_version,

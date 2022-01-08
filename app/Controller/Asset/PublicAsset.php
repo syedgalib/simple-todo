@@ -31,16 +31,16 @@ class PublicAsset extends AssetEnqueuer {
 	public function add_css_scripts() {
 		$scripts = [];
 
-		// $scripts['simple-todo-public-style'] = [
-		// 	'file_name' => 'public-style',
+		// $scripts['simple-todo-public-main-style'] = [
+		// 	'file_name' => 'public-main',
 		// 	'base_path' => SIMPLE_TODO_CSS_PATH,
 		// 	'deps'      => [],
 		// 	'ver'       => $this->script_version,
 		// 	'group'     => 'public',
 		// ];
 
-		$scripts['simple-todo-public-style'] = [
-			'file_name' => 'public-style',
+		$scripts['simple-todo-public-main-style'] = [
+			'file_name' => 'public-main',
 			'base_path' => SIMPLE_TODO_CSS_PATH,
 			'deps'      => [],
 			'ver'       => $this->script_version,
@@ -60,7 +60,7 @@ class PublicAsset extends AssetEnqueuer {
 		$scripts = [];
 
 		// $scripts['simple-todo-public-script'] = [
-		// 	'file_name'     => 'public-script',
+		// 	'file_name'     => 'public-main',
 		// 	'base_path'     => SIMPLE_TODO_JS_PATH,
 		// 	'deps'          => '',
 		// 	'ver'           => $this->script_version,
@@ -68,7 +68,7 @@ class PublicAsset extends AssetEnqueuer {
 		// ];
 
 		$scripts['simple-todo-public-script'] = [
-			'file_name'     => 'public-script',
+			'file_name'     => 'public-main',
 			'base_path'     => SIMPLE_TODO_JS_PATH,
 			'deps'          => '',
 			'ver'           => $this->script_version,

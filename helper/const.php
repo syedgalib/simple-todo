@@ -16,6 +16,10 @@ if ( ! defined( 'SIMPLE_TODO_BASE' ) ) {
     define( 'SIMPLE_TODO_BASE', dirname( dirname( __FILE__ ) ) . '/' );
 }
 
+if ( ! defined( 'SIMPLE_TODO_LANGUAGES' ) ) {
+    define( 'SIMPLE_TODO_LANGUAGES', SIMPLE_TODO_BASE . 'languages' );
+}
+
 if ( ! defined( 'SIMPLE_TODO_POST_TYPE' ) ) {
     define( 'SIMPLE_TODO_POST_TYPE', 'simple-todo' );
 }
@@ -45,5 +49,5 @@ if ( ! defined( 'SIMPLE_TODO_CSS_PATH' ) ) {
 }
 
 if ( ! defined( 'SIMPLE_TODO_LOAD_MIN_FILES' ) ) {
-    define( 'SIMPLE_TODO_LOAD_MIN_FILES', SCRIPT_DEBUG );
+    define( 'SIMPLE_TODO_LOAD_MIN_FILES', ! SCRIPT_DEBUG );
 }

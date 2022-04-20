@@ -147,8 +147,6 @@ abstract class Enqueuer {
 			return false;
 		}
 
-		if ( ! empty( $script_args['section'] ) ) return false;
-
 		if ( ( isset( $group_args['page'] ) && isset( $script_args[ 'page' ] ) ) ) {
 			if ( is_string( $script_args[ 'page' ] ) && $group_args['page'] !== $script_args[ 'page' ] ) return false;
 			if ( is_array( $script_args[ 'page' ] ) && ! in_array( $group_args['page'], $script_args[ 'page' ] ) ) return false;
@@ -182,40 +180,22 @@ abstract class Enqueuer {
 	public function add_localize_data_to_script( $handle, $script_args ) {
 
 		if ( ! is_array( $script_args ) ) { return; }
-		if ( empty( $script_args['localize_data'] ) ) { return false; }
+		if ( empty( $script_args['data'] ) ) { return; }
+		if ( ! is_array( $script_args['data'] ) ) { return; }
+		if ( ! $this->is_assoc_array( $script_args['data'] ) ) { return; }
 
-		if ( $this->is_assoc_array( $script_args['localize_data'] ) ) {
-			if ( ! $this->has_valid_localize_data( $script_args['localize_data'] ) ) {
-				return;
-			}
-
-			wp_localize_script( $handle, $script_args['localize_data']['object_name'], $script_args['localize_data']['data'] );
-			return;
-		}
-
-		foreach ( $script_args['localize_data'] as $script_args_item ) {
-
-			if ( ! $this->has_valid_localize_data( $script_args_item ) ) {
-				return;
-			}
-
-			wp_localize_script( $handle, $script_args_item['object_name'], $script_args_item['data'] );
+		foreach ( $script_args['data'] as $script_key => $script_data ) {
+			wp_localize_script( $handle, $script_key, $script_data );
 		}
 	}
 
-	// has_valid_localize_data
-	public function has_valid_localize_data( array $localize_data = [] ) {
-
-		if ( empty( $localize_data['object_name'] ) ) { return false; }
-		if ( ! is_string( $localize_data['object_name'] ) ) { return false; }
-		if ( empty( $localize_data['data'] ) ) { return false; }
-		if ( ! is_array(  $localize_data['data'] ) ) { return false; }
-
-		return true;
-	}
-
-	// is_assoc_array
-	public function is_assoc_array( array $arr = [] ) {
+	/**
+	 * Is Associative Array
+	 *
+	 * @param array $args
+	 * @return bool
+	 */
+	public function is_assoc_array( $arr = [] ) {
 		if ( array() === $arr ) { return false; }
 
 		return array_keys( $arr) !== range( 0, count($arr) - 1 );

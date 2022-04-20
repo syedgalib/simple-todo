@@ -44,7 +44,8 @@ final class SimpleTodo {
      */
     protected function get_controllers() {
         return [
-            Controller\Asset\Init::class,
+            // Controller
+            Controller\Init::class,
         ];
     }
 

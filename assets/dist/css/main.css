@@ -1,17 +1,14 @@
-
-.box {
-  min-height: 50px;
-  min-width: 50px;
-  background-image: url('/dist/images/logo.svg');
-}
-
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
   pointer-events: none;
+  height: 100px;
+  width: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('/dist/images/logo.svg');
 }
 
 @media (prefers-reduced-motion: no-preference) {

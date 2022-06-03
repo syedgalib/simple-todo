@@ -1,5 +1,36 @@
-import { defineConfig, splitVendorChunkPlugin } from 'vite'
+import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+// import path from "path"
+
+
+// function svgResolverPlugin() {
+//   return {
+//     name: 'svg-resolver',
+//     resolveId(source, importer) {
+//       if (source.endsWith('.svg')) {
+
+//         const newPath = path.dirname(importer);
+
+//         console.log( { newPath, source, importer } );
+
+//         return path.resolve( newPath , source);
+//       }
+//     },
+//     load(id) {
+//       if (id.endsWith('.svg')) {
+
+//         console.log( { id} );
+
+//         const referenceId = this.emitFile({
+//           type: 'asset',
+//           name: path.basename(id),
+//           source: fs.readFileSync(id)
+//         });
+//         return `export default import.meta.ROLLUP_FILE_URL_${referenceId};`;
+//       }
+//     }
+//   };
+// }
 
 function getAssetDestination( assetName, mode ) {
   const imageFormats = [ 'svg', 'png', 'jpg', 'jpeg' ];
@@ -55,7 +86,13 @@ export default defineConfig( ( { command, mode } ) => {
   }
 
   return {
-    plugins: [ react(), splitVendorChunkPlugin() ],
+    plugins: [ react() ],
+    // publicDir: 'assets/dist',
+    resolve: {
+      alias: ( a, b )  => {
+        console.log( { a, b } );
+      },
+    },
     build: {
       outDir: 'assets',
       emptyOutDir: false,
@@ -65,15 +102,14 @@ export default defineConfig( ( { command, mode } ) => {
       minify: minify,
       rollupOptions: {
         input: {
-          // main: '/assets/src/main.jsx',
           main: '/assets/src/public/js/main.jsx',
         },
         output: {
           entryFileNames,
           assetFileNames,
-          manualChunks: {
-            react: ['react']
-          }
+          // manualChunks: {
+          //   react: ['react']
+          // }
         }
       },
     },

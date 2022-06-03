@@ -90,13 +90,16 @@ abstract class Enqueuer {
 			];
 
 			$script_args = array_merge( $default, $script_args );
+			$ext = 'js';
 
 			if ( SIMPLE_TODO_IN_DEVELOPMENT ) {
+				$ext = $script_args['src_ext'];
+
 				$script_args['ver']       = null;
 				$script_args['base_path'] = SIMPLE_TODO_VITE_HOST . $script_args['src_path'];
 			}
 
-			$src = $script_args['base_path'] . $this->get_script_file_name( $script_args ) . '.' . $script_args['src_ext'];
+			$src = $script_args['base_path'] . $this->get_script_file_name( $script_args ) . '.' . $ext;
 
 			if ( ! empty( $script_args['link'] ) ) {
 				$src = $script_args['link'];

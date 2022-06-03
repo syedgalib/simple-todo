@@ -8,8 +8,7 @@
   width: 100px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url('http://localhost:3000/assets/dist/images/logo.svg');
-  /* background-image: url('./../images/logo.svg'); */
+  background-image: url('../images/logo.svg');
 }
 
 @media (prefers-reduced-motion: no-preference) {

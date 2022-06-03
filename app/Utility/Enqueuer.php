@@ -22,13 +22,20 @@ abstract class Enqueuer {
 			$default = [
 				'file_name' => $handle,
 				'base_path' => SIMPLE_TODO_CSS_PATH,
+				'src_path'  => SIMPLE_TODO_SRC_PATH,
 				'deps'      => [],
 				'ver'       => $this->script_version,
 				'media'     => 'all',
 				'link'      => ''
 			];
 
-			$script_args = array_merge( $default, $script_args );
+			$script_args = array_merge( $default, $script_args );;
+
+			if ( SIMPLE_TODO_IN_DEVELOPMENT ) {
+				$script_args['ver']       = null;
+				$script_args['base_path'] = SIMPLE_TODO_VITE_HOST . $script_args['src_path'];
+			}
+
 			$src = $script_args['base_path'] . $this->get_script_file_name( $script_args ) . '.css';
 
 			if ( ! empty( $script_args['link'] ) ) {
@@ -73,15 +80,23 @@ abstract class Enqueuer {
 			$default = [
 				'file_name' => $handle,
 				'base_path' => SIMPLE_TODO_JS_PATH,
+				'src_path'  => SIMPLE_TODO_SRC_PATH,
 				'link'      => '',
 				'deps'      => [],
 				'ver'       => $this->script_version,
 				'has_rtl'   => false,
 				'in_footer' => true,
+				'src_ext'   => 'js',
 			];
 
 			$script_args = array_merge( $default, $script_args );
-			$src = $script_args['base_path'] . $this->get_script_file_name( $script_args ) . '.js';
+
+			if ( SIMPLE_TODO_IN_DEVELOPMENT ) {
+				$script_args['ver']       = null;
+				$script_args['base_path'] = SIMPLE_TODO_VITE_HOST . $script_args['src_path'];
+			}
+
+			$src = $script_args['base_path'] . $this->get_script_file_name( $script_args ) . '.' . $script_args['src_ext'];
 
 			if ( ! empty( $script_args['link'] ) ) {
 				$src = $script_args['link'];
@@ -213,10 +228,15 @@ abstract class Enqueuer {
 		$args    = array_merge( $default, $args );
 
 		$file_name  = ( ! empty( $args['file_name'] ) ) ? $args['file_name'] : '';
+
+		if ( SIMPLE_TODO_IN_DEVELOPMENT ) {
+			return $file_name;
+		}
+
 		$has_min    = ( ! empty( $args['has_min'] ) ) ? true : false;
 		$has_rtl    = ( ! empty( $args['has_rtl'] ) ) ? true : false;
 
-		$is_rtl   =  is_rtl();
+		$is_rtl = is_rtl();
 
 		if ( $has_min && $this->load_min ) {
 			$file_name = "{$file_name}.min";

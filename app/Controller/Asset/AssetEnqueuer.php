@@ -15,6 +15,32 @@ abstract class AssetEnqueuer extends Enqueuer {
 	 */
 	abstract public function load_scripts();
 
+	public function __construct() {
+
+		add_action( 'script_loader_tag', [ $this, 'add_script_attributes' ], 20, 3 );
+
+	}
+
+	/**
+	 * Add Sscript Attributes
+	 * 
+	 * @return string
+	 */
+	public function add_script_attributes( $tag, $handle, $src ) {
+
+		if ( ! SIMPLE_TODO_IN_DEVELOPMENT ) {
+			return $tag;
+		}
+
+        if ( ! preg_match( '/^(simple-todo-).+/',  $handle ) ) {
+            return $tag;
+        }
+
+        $tag = str_replace( 'src=', "type='module' src=", $tag );
+
+        return $tag;
+    }
+
 	/**
 	 * Enqueue Scripts
 	 *

@@ -1,11 +1,10 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
-import customConfig from './vite.custom-config'
-
+import projectConfig from './vite.project-config'
 
 // https://vitejs.dev/config/
 export default defineConfig( ( { command, mode } ) => {
-  const config = customConfig( mode );
+  const config = projectConfig( mode );
 
   console.log( { command, mode } );
 

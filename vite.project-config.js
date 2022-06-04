@@ -1,6 +1,16 @@
 import { getAssetDestination } from './vite.helper';
 
-function customConfig( mode ) {
+let userConfig = null;
+
+// Try to get user confguartion
+try {
+    const maybeUserConfig = require( './vite.user-config.js' );
+    userConfig = maybeUserConfig.userConfig;
+    
+} catch( _ ) { }
+
+// Project Config
+function projectConfig( mode ) {
 
     // Common Config
     const commonConfig = {
@@ -32,11 +42,14 @@ function customConfig( mode ) {
         server: commonConfig.server,
     };
 
-    if ( 'development' == mode ) {
-        return devConfig;
+    let config = ( 'development' == mode ) ? devConfig : prodConfig;
+
+    // Override with user config if exist
+    if ( typeof userConfig !== 'undefined' && typeof userConfig === 'function' ) {
+        config = userConfig( config, commonConfig, mode );
     }
 
-    return prodConfig;
+    return config;
 }
 
-export default customConfig;
+export default projectConfig;

@@ -1,36 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-// import path from "path"
-
-
-// function svgResolverPlugin() {
-//   return {
-//     name: 'svg-resolver',
-//     resolveId(source, importer) {
-//       if (source.endsWith('.svg')) {
-
-//         const newPath = path.dirname(importer);
-
-//         console.log( { newPath, source, importer } );
-
-//         return path.resolve( newPath , source);
-//       }
-//     },
-//     load(id) {
-//       if (id.endsWith('.svg')) {
-
-//         console.log( { id} );
-
-//         const referenceId = this.emitFile({
-//           type: 'asset',
-//           name: path.basename(id),
-//           source: fs.readFileSync(id)
-//         });
-//         return `export default import.meta.ROLLUP_FILE_URL_${referenceId};`;
-//       }
-//     }
-//   };
-// }
 
 function getAssetDestination( assetName, mode ) {
   const imageFormats = [ 'svg', 'png', 'jpg', 'jpeg' ];
@@ -64,11 +33,12 @@ export default defineConfig( ( { command, mode } ) => {
 
   console.log( { command, mode } );
 
-  // Production Config
+  // Default Config
+  const destDir = 'assets/dist/';
   let minify = true;
-  let entryFileNames = 'dist/js/[name].min.js';
+  let entryFileNames = destDir + 'js/[name].min.js';
   let assetFileNames = ( assetInfo ) => {
-    return 'dist/' + getAssetDestination( assetInfo.name );
+    return destDir + getAssetDestination( assetInfo.name );
   };
 
   // Development Config
@@ -77,26 +47,21 @@ export default defineConfig( ( { command, mode } ) => {
     minify = false;
 
     // Entry File Names
-    entryFileNames = 'dist/js/[name].js';
+    entryFileNames = destDir + 'js/[name].js';
 
     // Asset File Names
     assetFileNames = ( assetInfo ) => {
-      return 'dist/' + getAssetDestination( assetInfo.name, 'development' );
+      return destDir + getAssetDestination( assetInfo.name, 'development' );
     };
   }
 
   return {
+    base: '/wp-content/plugins/simple-todo/',
     plugins: [ react() ],
-    // publicDir: 'assets/dist',
-    resolve: {
-      alias: ( a, b )  => {
-        console.log( { a, b } );
-      },
-    },
     build: {
-      outDir: 'assets',
+      outDir: '',
+      assetsDir: 'dist',
       emptyOutDir: false,
-      assetsDir: 'dist/js',
       polyfillModulePreload: false,
       sourcemap: true,
       minify: minify,
@@ -107,9 +72,6 @@ export default defineConfig( ( { command, mode } ) => {
         output: {
           entryFileNames,
           assetFileNames,
-          // manualChunks: {
-          //   react: ['react']
-          // }
         }
       },
     },

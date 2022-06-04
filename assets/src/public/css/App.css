@@ -6,9 +6,6 @@
   pointer-events: none;
   height: 100px;
   width: 100px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url('../images/logo.svg');
 }
 
 @media (prefers-reduced-motion: no-preference) {

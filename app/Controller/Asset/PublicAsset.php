@@ -43,7 +43,6 @@ class PublicAsset extends AssetEnqueuer {
 
 		$scripts['simple-todo-public-main-style'] = [
 			'file_name' => 'main',
-			'src_path'  => SIMPLE_TODO_SRC_PATH . 'public/css/',
 			'base_path' => SIMPLE_TODO_CSS_PATH,
 			'deps'      => [],
 			'ver'       => $this->script_version,

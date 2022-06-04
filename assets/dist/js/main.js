@@ -22503,6 +22503,7 @@ var m = reactDom.exports;
   };
 }
 var App$1 = "";
+var logo = "/wp-content/plugins/simple-todo/assets/dist/images/logo.svg";
 var jsxDevRuntime = { exports: {} };
 var reactJsxDevRuntime_development = {};
 /**
@@ -23374,17 +23375,18 @@ function App() {
     children: /* @__PURE__ */ jsxDevRuntime.exports.jsxDEV("header", {
       className: "App-header",
       children: [/* @__PURE__ */ jsxDevRuntime.exports.jsxDEV("img", {
+        src: logo,
         className: "App-logo",
         alt: "logo"
       }, void 0, false, {
         fileName: _jsxFileName$1,
-        lineNumber: 11,
+        lineNumber: 12,
         columnNumber: 9
       }, this), /* @__PURE__ */ jsxDevRuntime.exports.jsxDEV("p", {
-        children: "Hello Vite with React!"
+        children: "Hello Vite + React!"
       }, void 0, false, {
         fileName: _jsxFileName$1,
-        lineNumber: 12,
+        lineNumber: 13,
         columnNumber: 9
       }, this), /* @__PURE__ */ jsxDevRuntime.exports.jsxDEV("p", {
         children: /* @__PURE__ */ jsxDevRuntime.exports.jsxDEV("button", {
@@ -23393,24 +23395,24 @@ function App() {
           children: ["count is: ", count]
         }, void 0, true, {
           fileName: _jsxFileName$1,
-          lineNumber: 14,
+          lineNumber: 15,
           columnNumber: 11
         }, this)
       }, void 0, false, {
         fileName: _jsxFileName$1,
-        lineNumber: 13,
+        lineNumber: 14,
         columnNumber: 9
       }, this), /* @__PURE__ */ jsxDevRuntime.exports.jsxDEV("p", {
         children: ["Edit ", /* @__PURE__ */ jsxDevRuntime.exports.jsxDEV("code", {
           children: "App.jsx"
         }, void 0, false, {
           fileName: _jsxFileName$1,
-          lineNumber: 19,
+          lineNumber: 20,
           columnNumber: 16
         }, this), " and save to test HMR updates."]
       }, void 0, true, {
         fileName: _jsxFileName$1,
-        lineNumber: 18,
+        lineNumber: 19,
         columnNumber: 9
       }, this), /* @__PURE__ */ jsxDevRuntime.exports.jsxDEV("p", {
         children: [/* @__PURE__ */ jsxDevRuntime.exports.jsxDEV("a", {
@@ -23421,7 +23423,7 @@ function App() {
           children: "Learn React"
         }, void 0, false, {
           fileName: _jsxFileName$1,
-          lineNumber: 22,
+          lineNumber: 23,
           columnNumber: 11
         }, this), " | ", /* @__PURE__ */ jsxDevRuntime.exports.jsxDEV("a", {
           className: "App-link",
@@ -23431,22 +23433,22 @@ function App() {
           children: "Vite Docs"
         }, void 0, false, {
           fileName: _jsxFileName$1,
-          lineNumber: 31,
+          lineNumber: 32,
           columnNumber: 11
         }, this)]
       }, void 0, true, {
         fileName: _jsxFileName$1,
-        lineNumber: 21,
+        lineNumber: 22,
         columnNumber: 9
       }, this)]
     }, void 0, true, {
       fileName: _jsxFileName$1,
-      lineNumber: 10,
+      lineNumber: 11,
       columnNumber: 7
     }, this)
   }, void 0, false, {
     fileName: _jsxFileName$1,
-    lineNumber: 9,
+    lineNumber: 10,
     columnNumber: 5
   }, this);
 }

@@ -22,20 +22,13 @@ abstract class Enqueuer {
 			$default = [
 				'file_name' => $handle,
 				'base_path' => SIMPLE_TODO_CSS_PATH,
-				'src_path'  => SIMPLE_TODO_SRC_PATH,
 				'deps'      => [],
 				'ver'       => $this->script_version,
 				'media'     => 'all',
 				'link'      => ''
 			];
 
-			$script_args = array_merge( $default, $script_args );;
-
-			if ( SIMPLE_TODO_IN_DEVELOPMENT ) {
-				$script_args['ver']       = null;
-				$script_args['base_path'] = SIMPLE_TODO_VITE_HOST . $script_args['src_path'];
-			}
-
+			$script_args = array_merge( $default, $script_args );
 			$src = $script_args['base_path'] . $this->get_script_file_name( $script_args ) . '.css';
 
 			if ( ! empty( $script_args['link'] ) ) {
@@ -52,6 +45,11 @@ abstract class Enqueuer {
 	 * @return void
 	 */
 	public function enqueue_css_scripts_by_group( array $args = [] ) {
+
+		if ( SIMPLE_TODO_IN_DEVELOPMENT ) {
+			return;
+		}
+
 		$default = [ 'scripts' => $this->css_scripts, 'group' => 'public' ];
 		$args    = array_merge( $default, $args );
 

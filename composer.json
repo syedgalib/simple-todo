@@ -1,0 +1,20 @@
+{
+    "name": "simple-todo/simple-todo",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "SimpleTodo\\": "app/"
+        },
+        "files": [ 
+            "helper/const.php", 
+            "helper/functions.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Syed Galib Ahmed",
+            "email": "syedgalibahmed@gmail.com"
+        }
+    ],
+    "require": {}
+}

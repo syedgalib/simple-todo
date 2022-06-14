@@ -2,7 +2,9 @@
 
 namespace SimpleTodo\Controller\Asset;
 
-class AdminAsset extends AssetEnqueuer {
+use SimpleTodo\Utility\Enqueuer\Enqueuer;
+
+class AdminAsset extends Enqueuer {
 	
 	/**
 	 * Constuctor

@@ -2,7 +2,9 @@
 
 namespace SimpleTodo\Controller\Asset;
 
-class PublicAsset extends AssetEnqueuer {
+use SimpleTodo\Utility\Enqueuer\Enqueuer;
+
+class PublicAsset extends Enqueuer {
 	
 	/**
 	 * Constuctor
@@ -72,6 +74,7 @@ class PublicAsset extends AssetEnqueuer {
 		$scripts['simple-todo-react-refresh'] = [
 			'file_name' => 'react-refresh',
 			'src_path'  => SIMPLE_TODO_VENDOR_JS_SRC_PATH,
+			'src_ext'   => 'js',
 			'base_path' => SIMPLE_TODO_VENDOR_JS_PATH,
 			'deps'      => [],
 			'ver'       => null,
@@ -82,7 +85,7 @@ class PublicAsset extends AssetEnqueuer {
 		$scripts['simple-todo-public-script'] = [
 			'file_name' => 'main',
 			'src_ext'   => 'jsx',
-			'src_path'  => SIMPLE_TODO_SRC_PATH . 'public/js/',
+			'src_path'  => SIMPLE_TODO_SRC_PATH . 'js/',
 			'base_path' => SIMPLE_TODO_JS_PATH,
 			'deps'      => '',
 			'ver'       => $this->script_version,

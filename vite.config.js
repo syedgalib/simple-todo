@@ -20,7 +20,7 @@ export default defineConfig( ( { command, mode } ) => {
       minify: config.minify,
       rollupOptions: {
         input: {
-          main: '/assets/src/public/js/main.jsx',
+          main: '/src/js/main.jsx',
         },
         output: {
           entryFileNames: config.entryFileNames,

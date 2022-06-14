@@ -1,8 +1,8 @@
 <?php
 
-namespace SimpleTodo\Utility;
+namespace SimpleTodo\Utility\Enqueuer;
 
-abstract class Enqueuer {
+abstract class Enqueuer_Base {
 
 	public $js_scripts     = [];
 	public $css_scripts    = [];
@@ -78,13 +78,13 @@ abstract class Enqueuer {
 			$default = [
 				'file_name' => $handle,
 				'base_path' => SIMPLE_TODO_JS_PATH,
-				'src_path'  => SIMPLE_TODO_SRC_PATH,
+				'src_path'  => SIMPLE_TODO_SRC_PATH . '/js/',
 				'link'      => '',
 				'deps'      => [],
 				'ver'       => $this->script_version,
 				'has_rtl'   => false,
 				'in_footer' => true,
-				'src_ext'   => 'js',
+				'src_ext'   => 'jsx',
 			];
 
 			$script_args = array_merge( $default, $script_args );
@@ -94,7 +94,7 @@ abstract class Enqueuer {
 				$ext = $script_args['src_ext'];
 
 				$script_args['ver']       = null;
-				$script_args['base_path'] = SIMPLE_TODO_VITE_HOST . $script_args['src_path'];
+				$script_args['base_path'] = SIMPLE_TODO_HOST_BASE . $script_args['src_path'];
 			}
 
 			$src = $script_args['base_path'] . $this->get_script_file_name( $script_args ) . '.' . $ext;

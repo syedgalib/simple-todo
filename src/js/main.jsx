@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import './../css/index.css'
+import './../sass/index.css'
 
 const elm = document.getElementById('root');
 if ( elm ) {

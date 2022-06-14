@@ -22503,7 +22503,7 @@ var m = reactDom.exports;
   };
 }
 var App$1 = "";
-var logo = "/wp-content/plugins/simple-todo/assets/dist/images/logo.svg";
+var logo = "/wp-content/plugins/simple-todo/assets/images/logo.svg";
 var jsxDevRuntime = { exports: {} };
 var reactJsxDevRuntime_development = {};
 /**
@@ -23367,7 +23367,7 @@ var reactJsxDevRuntime_development = {};
 {
   jsxDevRuntime.exports = reactJsxDevRuntime_development;
 }
-var _jsxFileName$1 = "/Users/syedgalibahmed/Local Sites/video-chat-support/app/public/wp-content/plugins/simple-todo/assets/src/public/js/App.jsx";
+var _jsxFileName$1 = "/Users/syedgalibahmed/Local Sites/wpwax-support-app/app/public/wp-content/plugins/simple-todo/src/js/App.jsx";
 function App() {
   const [count, setCount] = react.exports.useState(0);
   return /* @__PURE__ */ jsxDevRuntime.exports.jsxDEV("div", {
@@ -23453,7 +23453,7 @@ function App() {
   }, this);
 }
 var index = "";
-var _jsxFileName = "/Users/syedgalibahmed/Local Sites/video-chat-support/app/public/wp-content/plugins/simple-todo/assets/src/public/js/main.jsx";
+var _jsxFileName = "/Users/syedgalibahmed/Local Sites/wpwax-support-app/app/public/wp-content/plugins/simple-todo/src/js/main.jsx";
 const elm = document.getElementById("root");
 if (elm) {
   client.createRoot(elm).render(/* @__PURE__ */ jsxDevRuntime.exports.jsxDEV(React.StrictMode, {

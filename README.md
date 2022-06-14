@@ -1,9 +1,9 @@
 # Simple Todo
 A MVC based plugin starter for WordPress
 ## 1) Getting Started
-### 1.1) Find and replace
+### 1.1) Find and replace following strings from all project files
 - SimpleTodo -> NewPluginName
-- 'simple-todo' -> new-plugin-name
+- simple-todo -> new-plugin-name
 - simple_todo_ -> new_plugin_name_
 - SIMPLE_TODO_ -> NEW_PLUGIN_NAME_
 
@@ -25,7 +25,7 @@ npm install
 ### 2.1) Enable Script Debug
 Enable Script Debug from wp-config.php
 ```php
-define( 'SCRIPT_DEBUG', true );
+define( 'SIMPLE_TODO_IN_DEVELOPMENT', true );
 ```
 ### 2.2) Initialize Vite
 ```shell
@@ -40,7 +40,7 @@ npm run build
 ### 2.3.2) Disable Script Debug
 Disable script debug from wp-config.php to see the production result
 ```php
-define( 'SCRIPT_DEBUG', false );
+define( 'SIMPLE_TODO_IN_DEVELOPMENT', false );
 ```
 
 

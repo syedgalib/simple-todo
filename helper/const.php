@@ -4,8 +4,16 @@ if ( ! defined( 'SIMPLE_TODO_VERSION' ) ) {
     define( 'SIMPLE_TODO_VERSION', '1.0.0' );
 }
 
-if ( ! defined( 'SIMPLE_TODO_VITE_HOST' ) ) {
-    define( 'SIMPLE_TODO_VITE_HOST', 'http://localhost:3000/' );
+if ( ! defined( 'SIMPLE_TODO_PORT' ) ) {
+    define( 'SIMPLE_TODO_PORT', 3000 );
+}
+
+if ( ! defined( 'SIMPLE_TODO_HOST' ) ) {
+    define( 'SIMPLE_TODO_HOST', 'http://localhost:' . SIMPLE_TODO_PORT . '/' );
+}
+
+if ( ! defined( 'SIMPLE_TODO_HOST_BASE' ) ) {
+    define( 'SIMPLE_TODO_HOST_BASE', SIMPLE_TODO_HOST . 'wp-content/plugins/simple-todo/' );
 }
 
 if ( ! defined( 'SIMPLE_TODO_IN_DEVELOPMENT' ) ) {
@@ -45,11 +53,11 @@ if ( ! defined( 'SIMPLE_TODO_URL' ) ) {
 }
 
 if ( ! defined( 'SIMPLE_TODO_ASSET_URL' ) ) {
-    define( 'SIMPLE_TODO_ASSET_URL', SIMPLE_TODO_URL . 'assets/dist/' );
+    define( 'SIMPLE_TODO_ASSET_URL', SIMPLE_TODO_URL . 'assets/' );
 }
 
 if ( ! defined( 'SIMPLE_TODO_SRC_PATH' ) ) {
-    define( 'SIMPLE_TODO_SRC_PATH', 'assets/src/' );
+    define( 'SIMPLE_TODO_SRC_PATH', 'src/' );
 }
 
 if ( ! defined( 'SIMPLE_TODO_JS_PATH' ) ) {
@@ -61,7 +69,7 @@ if ( ! defined( 'SIMPLE_TODO_VENDOR_JS_PATH' ) ) {
 }
 
 if ( ! defined( 'SIMPLE_TODO_VENDOR_JS_SRC_PATH' ) ) {
-    define( 'SIMPLE_TODO_VENDOR_JS_SRC_PATH', 'assets/dist/vendor-js/' );
+    define( 'SIMPLE_TODO_VENDOR_JS_SRC_PATH', 'assets/vendor-js/' );
 }
 
 if ( ! defined( 'SIMPLE_TODO_CSS_PATH' ) ) {

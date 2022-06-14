@@ -1,4 +1,4 @@
-import RefreshRuntime from 'http://localhost:3000/@react-refresh'
+import RefreshRuntime from 'http://localhost:3000/wp-content/plugins/simple-todo/@react-refresh'
 RefreshRuntime.injectIntoGlobalHook(window)
 window.$RefreshReg$ = () => {}
 window.$RefreshSig$ = () => (type) => type

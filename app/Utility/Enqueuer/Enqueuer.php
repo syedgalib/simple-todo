@@ -1,10 +1,8 @@
 <?php
 
-namespace SimpleTodo\Controller\Asset;
+namespace SimpleTodo\Utility\Enqueuer;
 
-use SimpleTodo\Utility\Enqueuer;
-
-abstract class AssetEnqueuer extends Enqueuer {
+abstract class Enqueuer extends Enqueuer_Base {
 
 	public $asset_group = 'public';
 

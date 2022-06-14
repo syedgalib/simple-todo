@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleTodo\Controller\Hook;
+namespace SimpleTodo\Module\Core\Hook;
 
 use SimpleTodo\Helper;
 

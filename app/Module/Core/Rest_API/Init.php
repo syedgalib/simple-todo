@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleTodo\Controller\Ajax;
+namespace SimpleTodo\Module\Core\Rest_API;
 
 use SimpleTodo\Helper;
 
@@ -22,7 +22,7 @@ class Init {
     /**
 	 * Controllers
 	 * 
-     * @return array
+     * @return array Controllers
 	 */
 	protected function get_controllers() {
         return [

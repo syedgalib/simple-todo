@@ -4,6 +4,10 @@ if ( ! defined( 'SIMPLE_TODO_VERSION' ) ) {
     define( 'SIMPLE_TODO_VERSION', '1.0.0' );
 }
 
+if ( ! defined( 'SIMPLE_TODO_DB_TABLE_PREFIX' ) ) {
+    define( 'SIMPLE_TODO_DB_TABLE_PREFIX', 'wpwax_cs' );
+}
+
 if ( ! defined( 'SIMPLE_TODO_PORT' ) ) {
     define( 'SIMPLE_TODO_PORT', 3000 );
 }

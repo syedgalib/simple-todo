@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleTodo\Controller\Asset;
+namespace SimpleTodo\Module\Core\Asset;
 
 use SimpleTodo\Helper;
 

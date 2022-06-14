@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleTodo\Controller\Shortcode;
+namespace SimpleTodo\Module\Core\Admin;
 
 use SimpleTodo\Helper;
 

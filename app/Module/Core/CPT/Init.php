@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleTodo\Controller\Admin;
+namespace SimpleTodo\Module\Core\CPT;
 
 use SimpleTodo\Helper;
 

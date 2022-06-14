@@ -1,6 +1,6 @@
 <?php
 
-use SimpleTodo\Controller;
+use SimpleTodo\Module;
 use SimpleTodo\Helper;
 
 final class SimpleTodo {
@@ -44,8 +44,8 @@ final class SimpleTodo {
      */
     protected function get_controllers() {
         return [
-            // Controller
-            Controller\Init::class,
+            // Module
+            Module\Init::class,
         ];
     }
 

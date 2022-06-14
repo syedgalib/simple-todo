@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleTodo\Controller;
+namespace SimpleTodo\Module\Core\Shortcode;
 
 use SimpleTodo\Helper;
 
@@ -26,13 +26,7 @@ class Init {
 	 */
 	protected function get_controllers() {
         return [
-            Asset\Init::class,
-            CPT\Init::class,
-            Admin\Init::class,
-            Ajax\Init::class,
-            Hook\Init::class,
-            Rest_API\Init::class,
-            Shortcode\Init::class,
+            
         ];
     }
 

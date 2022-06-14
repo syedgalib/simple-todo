@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleTodo\Controller\CPT;
+namespace SimpleTodo\Module\Core\Ajax;
 
 use SimpleTodo\Helper;
 
